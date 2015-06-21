@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package normalizador;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -17,7 +17,7 @@ import javax.swing.ListModel;
  * @author hegalda
  */
 public class Main extends javax.swing.JFrame {
-    
+
     public Main() {
         initComponents();
     }
@@ -43,6 +43,9 @@ public class Main extends javax.swing.JFrame {
         TP_3FN = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        TP_1FN = new javax.swing.JTextPane();
+        jLabel7 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         ListaDependenciasF = new javax.swing.JList();
@@ -123,37 +126,52 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane6.setViewportView(TP_1FN);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("1FN");
+
         javax.swing.GroupLayout normalizarLayout = new javax.swing.GroupLayout(normalizar.getContentPane());
         normalizar.getContentPane().setLayout(normalizarLayout);
         normalizarLayout.setHorizontalGroup(
             normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(normalizarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4)
+                .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(normalizarLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane6)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane4)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane5)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(normalizarLayout.createSequentialGroup()
+                        .addGap(255, 255, 255)
+                        .addComponent(jButton4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         normalizarLayout.setVerticalGroup(
             normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(normalizarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(normalizarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5))
-                .addGap(4, 4, 4)
-                .addComponent(jButton4))
+                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addGap(10, 10, 10))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,7 +183,7 @@ public class Main extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(51, 255, 0));
         jButton1.setText("Agregar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -183,7 +201,7 @@ public class Main extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setText("Eliminar");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -262,7 +280,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(ListaUniverso);
 
         jButton3.setText("Eliminar");
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -270,7 +288,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         BotonAgregarUniverso.setText("Agregar");
-        BotonAgregarUniverso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonAgregarUniverso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         BotonAgregarUniverso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAgregarUniversoActionPerformed(evt);
@@ -346,35 +364,34 @@ public class Main extends javax.swing.JFrame {
 
     private void BotonAgregarUniversoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAgregarUniversoActionPerformed
         /*
-        Este boton abre una ventana de dialogo que contiene una etiqueta sobre la cual el usuario
-        puede ingresar la variable que desea agregar al universe y con la que desea crear dependencias
-        funcionales.
-        */
-        
+         Este boton abre una ventana de dialogo que contiene una etiqueta sobre la cual el usuario
+         puede ingresar la variable que desea agregar al universe y con la que desea crear dependencias
+         funcionales.
+         */
+
         this.agregarElementoUniverso.setModal(true);
         this.agregarElementoUniverso.pack();
         this.agregarElementoUniverso.setVisible(true);
     }//GEN-LAST:event_BotonAgregarUniversoActionPerformed
 
     private void OKagregarElementoUniversoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OKagregarElementoUniversoActionPerformed
-       
+
         /*
-        Este boton agrega la variable ingresada por el usuario en la lista del universe
-        */
-        
-        DefaultListModel listModelU = new DefaultListModel(); 
-        boolean existsInList=false;//bandera inicializada en false
-        
-        if(this.ListaUniverso.getModel().getSize() > 0){//si existe algun elemento en la lista
-            for(int i=0 ; i<this.ListaUniverso.getModel().getSize(); i++ ){  
+         Este boton agrega la variable ingresada por el usuario en la lista del universe
+         */
+        DefaultListModel listModelU = new DefaultListModel();
+        boolean existsInList = false;//bandera inicializada en false
+
+        if (this.ListaUniverso.getModel().getSize() > 0) {//si existe algun elemento en la lista
+            for (int i = 0; i < this.ListaUniverso.getModel().getSize(); i++) {
                 listModelU.addElement(this.ListaUniverso.getModel().getElementAt(i)); //obtenemos el elemento
-                if((this.NombreagregarElementoUniverso.getText().replace(" ", "")).equals(this.ListaUniverso.getModel().getElementAt(i))){
-                    existsInList=true;//comparamos la variable que el usuario ingreso con la lista del univer
-                                      //para ver si esa variable de hecho existe
+                if ((this.NombreagregarElementoUniverso.getText().replace(" ", "")).equals(this.ListaUniverso.getModel().getElementAt(i))) {
+                    existsInList = true;//comparamos la variable que el usuario ingreso con la lista del univer
+                    //para ver si esa variable de hecho existe
                 }
-            } 
+            }
         }
-        if(!existsInList){//si la variable no existe, se agrega la variable al universe
+        if (!existsInList) {//si la variable no existe, se agrega la variable al universe
             listModelU.addElement(this.NombreagregarElementoUniverso.getText().replace(" ", "").toUpperCase());
             this.ListaUniverso.setModel(listModelU);
         }
@@ -386,25 +403,24 @@ public class Main extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         /*
-        Este boton elimina la DF de la lista, después de sus respectivas validaciones
-        */
-        
+         Este boton elimina la DF de la lista, después de sus respectivas validaciones
+         */
         //agregamos todas las DF en un nuevo modelo para poder modificarlo
-        DefaultListModel listModelDF = new DefaultListModel();  
-        for(int i=0 ; i<this.ListaDependenciasF.getModel().getSize() ; i++ ){  
-            listModelDF.addElement(this.ListaDependenciasF.getModel().getElementAt(i));  
-        } 
-        
+        DefaultListModel listModelDF = new DefaultListModel();
+        for (int i = 0; i < this.ListaDependenciasF.getModel().getSize(); i++) {
+            listModelDF.addElement(this.ListaDependenciasF.getModel().getElementAt(i));
+        }
+
         //si la lista no esta vacia
-        if(!this.ListaDependenciasF.isSelectionEmpty()){
+        if (!this.ListaDependenciasF.isSelectionEmpty()) {
                 //eliminamos dependiendo de las filas que el usuario escogio dentro de la lista de DF
-                //y estas filas son ingresadas a un arreglo de enteros que simbolizan las posiciones
-                //de las filas dentro de la lista
-                int[] eliminar = this.ListaDependenciasF.getSelectedIndices();
-                for(int i=0 ; i<eliminar.length; i++ ){  
-                    listModelDF.remove(eliminar[i]); //se van eliminando todas las filas contenidas en el arreglo
-                }
-                this.ListaDependenciasF.setModel(listModelDF);//seteamos el nuevo modelo
+            //y estas filas son ingresadas a un arreglo de enteros que simbolizan las posiciones
+            //de las filas dentro de la lista
+            int[] eliminar = this.ListaDependenciasF.getSelectedIndices();
+            for (int i = 0; i < eliminar.length; i++) {
+                listModelDF.remove(eliminar[i]); //se van eliminando todas las filas contenidas en el arreglo
+            }
+            this.ListaDependenciasF.setModel(listModelDF);//seteamos el nuevo modelo
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -413,40 +429,37 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_Textbox_DFAgregar1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     
+
         /*
-        Este boton agrega la dependencia funcional a la lista de DF
-        */
-        
-        DefaultListModel listModelDF = new DefaultListModel();  
-        boolean existsInList=false;//bandera que determina si la DF esta en la lista
-        if(this.ListaDependenciasF.getModel().getSize() > 0){//si la lista de DF NO esta vacia
-            for(int i=0 ; i<this.ListaDependenciasF.getModel().getSize(); i++ ){//recorremos la lista de DF
+         Este boton agrega la dependencia funcional a la lista de DF
+         */
+        DefaultListModel listModelDF = new DefaultListModel();
+        boolean existsInList = false;//bandera que determina si la DF esta en la lista
+        if (this.ListaDependenciasF.getModel().getSize() > 0) {//si la lista de DF NO esta vacia
+            for (int i = 0; i < this.ListaDependenciasF.getModel().getSize(); i++) {//recorremos la lista de DF
                 listModelDF.addElement(this.ListaDependenciasF.getModel().getElementAt(i));//obtenemos el elemento
-                
+
                 /*
-                Comparamos las dos variables concatenadas con la lista de DF solo para saber si ya esta repetida
-                */
-                
-                if((this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase() + "->" + this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase()).equals(this.ListaDependenciasF.getModel().getElementAt(i))){
-                    existsInList=true;
+                 Comparamos las dos variables concatenadas con la lista de DF solo para saber si ya esta repetida
+                 */
+                if ((this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase() + "->" + this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase()).equals(this.ListaDependenciasF.getModel().getElementAt(i))) {
+                    existsInList = true;
                 }
-            }          
+            }
         }
-        if(!existsInList){//si la combinacion no existe en la lista de DF entonces la agregamos
-            
-              /*
-                Aqui concatenamos toda la dependencia funcional
-                Tomamos las variables ingresadas a ambas textboxes y le concatenamos un -> en el centro
-                con el fin de una impresion "Bonita" y amigable al usuario.
-                */
-            
+        if (!existsInList) {//si la combinacion no existe en la lista de DF entonces la agregamos
+
+            /*
+             Aqui concatenamos toda la dependencia funcional
+             Tomamos las variables ingresadas a ambas textboxes y le concatenamos un -> en el centro
+             con el fin de una impresion "Bonita" y amigable al usuario.
+             */
             //se envian la dos entradas (las dos variables) a un metodo que verifica si existe la DF
-            if(DFExists(this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase(), this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase())){
-                listModelDF.addElement(this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase() + "->" + this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase()); 
+            if (DFExists(this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase(), this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase())) {
+                listModelDF.addElement(this.Textbox_DFAgregar1.getText().replace(" ", "").toUpperCase() + "->" + this.Textbox_DFAgregar2.getText().replace(" ", "").toUpperCase());
                 this.ListaDependenciasF.setModel(listModelDF);//seteamos el modelo actualizado
-            }else{//si ocurre un error porque las variables ingresadas no existen en el universe
-                JOptionPane.showMessageDialog (null, "ERROR, las variables ingresadas deben estar en el universe.", "Error", JOptionPane.ERROR_MESSAGE);
+            } else {//si ocurre un error porque las variables ingresadas no existen en el universe
+                JOptionPane.showMessageDialog(null, "ERROR, las variables ingresadas deben estar en el universe.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         //volvemos a poner las etiquetas de las dos variables en blanco
@@ -457,22 +470,20 @@ public class Main extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
         /*
-        Este boton elimina las variables de la lista del universe
-        */
-        
+         Este boton elimina las variables de la lista del universe
+         */
         //recorremos la lista del universe y obtenemos la variable que se va a eliminar
-        DefaultListModel listModelU = new DefaultListModel();  
-        for(int i=0 ; i<this.ListaUniverso.getModel().getSize() ; i++ ){  
-            listModelU.addElement(this.ListaUniverso.getModel().getElementAt(i));  
-        } 
-        
+        DefaultListModel listModelU = new DefaultListModel();
+        for (int i = 0; i < this.ListaUniverso.getModel().getSize(); i++) {
+            listModelU.addElement(this.ListaUniverso.getModel().getElementAt(i));
+        }
+
         //si la variable que se desea eliminar existe en el universo ...
-        
-        if(!this.ListaUniverso.isSelectionEmpty()){
+        if (!this.ListaUniverso.isSelectionEmpty()) {
             //se envia a un metodo que valida si se puede borrar del universo
-            if(PuedeBorrarElementoUniveso((String) this.ListaUniverso.getSelectedValue())){
+            if (PuedeBorrarElementoUniveso((String) this.ListaUniverso.getSelectedValue())) {
                 int[] eliminar = this.ListaUniverso.getSelectedIndices();
-                for(int i=0 ; i<eliminar.length; i++ ){  
+                for (int i = 0; i < eliminar.length; i++) {
                     listModelU.remove(eliminar[i]); //vamos eliminando esa variable de toda la lista del universe
                 }
                 this.ListaUniverso.setModel(listModelU);//se setea el modelo actualizado
@@ -482,59 +493,62 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         BuscadorClavesCandidatas bcc = new BuscadorClavesCandidatas();//instancia de la clase BuscadorClavesCandidatas
-        
+
         String universe = "";//cadena que va a contener toda la informacion almacenada en la lista de variables del 
-                              //universo
-        for(int i=0; i<this.ListaUniverso.getModel().getSize(); i++){
+        //universo
+        for (int i = 0; i < this.ListaUniverso.getModel().getSize(); i++) {
             //Vamos concatenando toda la lista en la cadena universe
             universe = universe + "," + (String) this.ListaUniverso.getModel().getElementAt(i);
         }
+
+        universo = universe;
         /*
-        Despues le eliminamos la primera coma, porque recordemos que al inicio de todo, concatenamos una
-        cadena universe vacia junto a una coma, entonces esta primera coma va a ser eliminada porque no la
-        necesitamos
+         Despues le eliminamos la primera coma, porque recordemos que al inicio de todo, concatenamos una
+         cadena universe vacia junto a una coma, entonces esta primera coma va a ser eliminada porque no la
+         necesitamos
         
-        Esta cadena despues es enviada 
-        */
-        
+         Esta cadena despues es enviada 
+         */
+
         StringBuilder sb1 = new StringBuilder(universe.toUpperCase());
         sb1.deleteCharAt(0);
         bcc.agregarUniverso(sb1.toString());
-        
+
         String dependenciasFuncionales = "";//cadena que va a contener todas las dependencias funcionales de la lista
-        for(int i=0; i<this.ListaDependenciasF.getModel().getSize(); i++){
+        for (int i = 0; i < this.ListaDependenciasF.getModel().getSize(); i++) {
             //vamos concatenando los valores de la lista de DFS en la cadena
             dependenciasFuncionales = dependenciasFuncionales + "," + (String) this.ListaDependenciasF.getModel().getElementAt(i);
         }
-   
+        dependencias = dependenciasFuncionales;
+
         /*
-        De la misma manera, eliminamos la primera coma que se dio por contatenarla a una cadena que inicialmente
-        estaba vacia, se convierte todo a mayúsculas, y luego se envia la cadena
-        */
+         De la misma manera, eliminamos la primera coma que se dio por contatenarla a una cadena que inicialmente
+         estaba vacia, se convierte todo a mayúsculas, y luego se envia la cadena
+         */
         StringBuilder sb2 = new StringBuilder(dependenciasFuncionales.toUpperCase());
         sb2.deleteCharAt(0);
         bcc.agregarDFs(sb2.toString());
         //System.out.println(sb2.toString());
-        
+
         //se obtiene el arreglo de cadenas que contiene todas las claves y se le asigna al arreglo "arregloClaves"
         ArrayList<String> arregloClaves = bcc.obtenerLlaves();
-        
-        if(arregloClaves.isEmpty()){//si el arreglo de claves viene vacío
-            JOptionPane.showMessageDialog (null, "No hay claves candidatas.", "Resultado", JOptionPane.WARNING_MESSAGE);
-        }else if(arregloClaves.size()==1){//si solo existe una clave
-            JOptionPane.showMessageDialog (null, "La clave candidata es:\n" + arregloClaves.get(0), "Resultado", JOptionPane.INFORMATION_MESSAGE);
-               llave_primaria=arregloClaves.get(0);//la llave primaria seria la primera de todas las candidatas
-        }else{//si no existe solo una clave 
+
+        if (arregloClaves.isEmpty()) {//si el arreglo de claves viene vacío
+            JOptionPane.showMessageDialog(null, "No hay claves candidatas.", "Resultado", JOptionPane.WARNING_MESSAGE);
+        } else if (arregloClaves.size() == 1) {//si solo existe una clave
+            JOptionPane.showMessageDialog(null, "La clave candidata es:\n" + arregloClaves.get(0), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+            llave_primaria = arregloClaves.get(0);//la llave primaria seria la primera de todas las candidatas
+        } else {//si no existe solo una clave 
             //se concatena todo a una cadena que sera enviada a un JOPtionPane posteriormente
-            llave_primaria=arregloClaves.get(0);
+            llave_primaria = arregloClaves.get(0);
             String mensajeDeDialogo = "";
-            for(String elemento: arregloClaves){//for especial 
+            for (String elemento : arregloClaves) {//for especial 
                 //formato especial con tabulaciones y saltos de linea
                 mensajeDeDialogo = "."
                         + "\t>" + ' ' + elemento + '\n' + mensajeDeDialogo;
             }
             //impresion de la cadena del arreglo recibido
-            JOptionPane.showMessageDialog (null, "Las claves candidatas son:\n" + mensajeDeDialogo, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Las claves candidatas son:\n" + mensajeDeDialogo, "Resultado", JOptionPane.INFORMATION_MESSAGE);
         }
         //System.out.println("clave elegida: "+arregloClaves.get(0));
     }//GEN-LAST:event_jMenuItem2ActionPerformed
@@ -544,11 +558,18 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        
+
         /*
-        Esta accion deberá encontrar todas las formas normales 2FN y 3FN
-        */
-       
+         Esta accion deberá encontrar todas las formas normales 2FN y 3FN
+         */
+        Normalizacion N = new Normalizacion();
+        TP_1FN.setText(N.PrimeraFN(llave_primaria, universo));
+        TP_2FN.setText(N.SegundaFN(llave_primaria, dependencias, universo).toString());
+        TP_3FN.setText(N.TerceraFN(llave_primaria, dependencias, universo).toString());
+        normalizar.pack();
+        normalizar.setModal(true);
+        normalizar.show();
+
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -589,72 +610,73 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-    
+
     //metodo que busca si la DF ingresada por el usuario existe en la lista de DFs existentes
     //el metodo recibe el texto contenida en las dos etiquetas, osea la variable que determina, y la 
     //que depende de la que la determina
-    public boolean DFExists(String parte1DF, String parte2DF){
+    public boolean DFExists(String parte1DF, String parte2DF) {
         ArrayList<String> Universo = new ArrayList<>();//creamos un nuevo arreglo
-        
+
         /*
-        Agregamos cada elemento de la lista al arreglo "Universo"
-        */
-        for(int i=0; i<this.ListaUniverso.getModel().getSize(); i++){
+         Agregamos cada elemento de la lista al arreglo "Universo"
+         */
+        for (int i = 0; i < this.ListaUniverso.getModel().getSize(); i++) {
             Universo.add((String) this.ListaUniverso.getModel().getElementAt(i));
         }
-        
+
         //parseamos los parametros del método
         String[] DFPartes1 = parte1DF.split("");
         String[] DFPartes2 = parte2DF.split("");
-        
-        for(String elementoEnValidacion : DFPartes1){//for especial de recorrido del lado izquiedo de la DF
-            if(!Universo.contains(elementoEnValidacion)){//si la primera variable no existe en el universo
+
+        for (String elementoEnValidacion : DFPartes1) {//for especial de recorrido del lado izquiedo de la DF
+            if (!Universo.contains(elementoEnValidacion)) {//si la primera variable no existe en el universo
                 return false;// se retorna falso, y se asume que la DF no es valida
             }
         }
-        
-        for(String elementoEnValidacion : DFPartes2){//for especial de recorrido del lado izquiedo de la DF
-            if(!Universo.contains(elementoEnValidacion)){//si la segunda variable de la DF ingresada no esta en el universo
+
+        for (String elementoEnValidacion : DFPartes2) {//for especial de recorrido del lado izquiedo de la DF
+            if (!Universo.contains(elementoEnValidacion)) {//si la segunda variable de la DF ingresada no esta en el universo
                 return false;// se retorna falso, y se asume que la DF no es valida
             }
         }
-        
+
         // si todo sale bien, se retorna true, y con esto se califica la DF del usuario como válida
         return true;
     }
-    
+
     //este metodo valida si se puede borrar del universo y recibe el elemento que el usario quiere eliminar
-    public boolean PuedeBorrarElementoUniveso(String ElementoABorrar){
+    public boolean PuedeBorrarElementoUniveso(String ElementoABorrar) {
         ArrayList<String> elements = new ArrayList<>();
-        for(int i=0; i<this.ListaDependenciasF.getModel().getSize(); i++){
+        for (int i = 0; i < this.ListaDependenciasF.getModel().getSize(); i++) {
             String DF = (String) this.ListaDependenciasF.getModel().getElementAt(i);
             /*
-            se quita la flecha de la impresion bonita para despues poder parsearla
-            */
+             se quita la flecha de la impresion bonita para despues poder parsearla
+             */
             DF = DF.replace("->", "");
             String[] elementsDF = DF.split("");
-            for(String Elemento : elementsDF){
+            for (String Elemento : elementsDF) {
                 //si el elemento actual no esta en el arreglo de elementos o su el arreglo esta vacio
                 //se agrega al arreglo
-                if(!elements.contains(Elemento) || elements.isEmpty()){
+                if (!elements.contains(Elemento) || elements.isEmpty()) {
                     elements.add(Elemento);
                 }
             }
         }
         // si el elemento que se desea borrar todavia forma parte de una dependencia funcional, no se puede eliiminar
-        if(elements.contains(ElementoABorrar)){
-            JOptionPane.showMessageDialog (null, "No se puede eliminar elemento porque aun forma parte de una Dependencia Funcional.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (elements.contains(ElementoABorrar)) {
+            JOptionPane.showMessageDialog(null, "No se puede eliminar elemento porque aun forma parte de una Dependencia Funcional.", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         return true;
     }
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAgregarUniverso;
     private javax.swing.JList ListaDependenciasF;
     private javax.swing.JList ListaUniverso;
     private javax.swing.JTextField NombreagregarElementoUniverso;
     private javax.swing.JButton OKagregarElementoUniverso;
+    private javax.swing.JTextPane TP_1FN;
     private javax.swing.JTextPane TP_2FN;
     private javax.swing.JTextPane TP_3FN;
     private javax.swing.JTextField Textbox_DFAgregar1;
@@ -670,6 +692,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -682,17 +705,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JDialog normalizar;
     // End of variables declaration//GEN-END:variables
 
     /*
-    Variables globales propias
-    */
-    
- String llave_primaria="";
- ArrayList<Normalizacion> norm= new ArrayList();
- ArrayList<Normalizacion> Actualizadas = new ArrayList();
- ArrayList<Normalizacion> Resto = new ArrayList();
+     Variables globales propias
+     */
+    String llave_primaria = "";
+    String universo = "";
+    String dependencias = "";
+    ArrayList<Normalizacion> norm = new ArrayList();
+    ArrayList<Normalizacion> Actualizadas = new ArrayList();
+    ArrayList<Normalizacion> Resto = new ArrayList();
 
 }
