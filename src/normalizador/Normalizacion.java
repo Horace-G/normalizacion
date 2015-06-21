@@ -63,6 +63,7 @@ public class Normalizacion {
 
     private String addTransitivas(String Clave, String[] Dependencias) {
         String retVal = "";
+        String secondCheck = "";
         for (int i = 0; i < Dependencias.length; i++) {
             String Dependencia[] = Dependencias[i].split("->");
             if (Clave.contains(Dependencia[0])) {
@@ -71,7 +72,63 @@ public class Normalizacion {
                 }
             }
         }
-        return retVal;
+
+        if (retVal.equals("")) {
+            return "";
+        } else {
+            for (int i = 0; i < retVal.length(); i++) {
+                Character Key = retVal.charAt(i);
+                String StringKey = Key.toString();
+                secondCheck += addTransitivas(StringKey, Dependencias);
+            }
+        }
+
+        return retVal + secondCheck;
+    }
+
+    private String addTransitivas3NF(String Clave, String[] Dependencias, ArrayList<String> Transitivas) {
+        String retVal = "";
+        String secondCheck = "";
+        for (int i = 0; i < Dependencias.length; i++) {
+            String Dependencia[] = Dependencias[i].split("->");
+            String KeyOne = "";
+            String KeyTwo = "";
+            if (Clave.length() > 1) {
+                KeyOne = ((Character) Clave.charAt(0)).toString();
+                KeyTwo = ((Character) Clave.charAt(1)).toString();
+            }else{
+                KeyOne = ((Character) Clave.charAt(0)).toString();
+            }
+
+            if (KeyOne.contains(Dependencia[0])) {
+                if (Dependencia.length > 1) {
+                    retVal += Dependencia[1];
+                    Transitivas.add("R(" + KeyOne + Dependencia[1] + ")");
+                }
+            }
+            if (KeyTwo.contains(Dependencia[0])) {
+                if (Dependencia.length > 1) {
+                    retVal += Dependencia[1];
+                    Transitivas.add("R(" + KeyTwo + Dependencia[1] + ")");
+                }
+            }
+        }
+        if (retVal.equals("")) {
+            return "";
+        } else {
+            String temp = "";
+            for (int i = 0; i < retVal.length(); i++) {
+                secondCheck = "";
+                Character Key = retVal.charAt(i);
+                String StringKey = Key.toString();
+                secondCheck += addTransitivas(StringKey, Dependencias);
+                temp += secondCheck;
+                Transitivas.add("R(" + StringKey + secondCheck + ")");
+            }
+            secondCheck = temp;
+        }
+
+        return retVal + secondCheck;
     }
 
     public ArrayList<String> TerceraFN(String ClavePrimaria, String dependencias, String universo) {
@@ -87,16 +144,15 @@ public class Normalizacion {
             }
             String REMOVE = "";
             if (ClavePrimaria.matches(regex)) {
-                String transitivas = addTransitivas(Dependencia[1], Dependencias);
+                String transitivas = addTransitivas3NF(Dependencia[1], Dependencias, retVal);
                 if (!transitivas.isEmpty()) {
-                    retVal.add("R(" + Dependencia[1] + "," + transitivas.replace("(.)\\1{1,}", "$1") + ")");
+                    //retVal.add("R(" + Dependencia[1] + "," + transitivas.replace("(.)\\1{1,}", "$1") + ")");
                     REMOVE = Dependencia[1] + transitivas.replace("(.)\\1{1,}", "$1");
                 } else {
                     REMOVE = Dependencia[1];
                 }
                 retVal.add("R(" + Dependencias[i].replace("->", "") + ")");
                 if (Dependencia.length > 1) {
-
                     for (int j = 0; j < REMOVE.length(); j++) {
                         universo = universo.replace(REMOVE.charAt(j), ' ');
                     }
@@ -109,20 +165,6 @@ public class Normalizacion {
         }
 
         universo = universo.replaceAll("\\s", "");
-
-        for (int i = 0; i < universo.length(); i++) {
-            Character Key = universo.charAt(i);
-            String REMOVE = "";
-            String transitivas = addTransitivas(Key.toString(), Dependencias);
-            if (!transitivas.isEmpty()) {
-                retVal.add("R(" + Key.toString() + "," + transitivas.replace("(.)\\1{1,}", "$1") + ")");
-                REMOVE = Key.toString() + transitivas;
-
-                for (int j = 0; j < REMOVE.length(); j++) {
-                    universo = universo.replace(REMOVE.charAt(j), ' ');
-                }
-            }
-        }
 
         if (!universo.trim().isEmpty()) {
             retVal.add("R(" + ClavePrimaria + "," + universo + ")");
